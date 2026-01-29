@@ -10,6 +10,9 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
+        <!-- Alpine.js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -39,8 +42,8 @@
                             <div class="w-full max-w-md">
                                 <div class="w-full rounded-b-xl shadow-sm overflow-hidden backdrop-blur-md bg-[#252525]/80 border border-[#3A3A3A]" style="opacity: 1; height: auto;">
                                     <ul class="font-['Bricolage_Grotesque',sans-serif]">
-                                        <li class="px-3 py-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item mb-2" style="opacity: 1; transform: none;">
-                                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
+                                        <li class="px-3 py-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item" style="opacity: 1; transform: none;">
+                                            <a href="/courses" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
                                                 <div class="flex items-center gap-2 justify-between">
                                                     <div class="flex items-center gap-2">
                                                         <span class="text-gray-300">
@@ -50,11 +53,11 @@
                                                                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                                                             </svg>
                                                         </span>
-                                                        <span class="text-sm font-semibold text-white font-bold font-['Bricolage_Grotesque',sans-serif] action-item-label">
+                                                        <span class="text-sm text-white font-['Bricolage_Grotesque',sans-serif] action-item-label">
                                                             Courses
                                                         </span>
                                                     <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif]">
-                                                        Learn Prompting, Marketing, &amp; AI Design
+                                                        <span class="">Learn More...</span>
                                                     </span>
                                                 </div>
                                             </div>
@@ -67,7 +70,7 @@
                                         </a>
                                     </li>
                                     <li class="px-3 py-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item " style="opacity: 1; transform: none;">
-                                        <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
+                                        <a href="/clients" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
                                             <div class="flex items-center gap-2 justify-between">
                                                 <div class="flex items-center gap-2">
                                                     <span class="text-gray-300">
@@ -78,11 +81,11 @@
                                                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                                         </svg>
                                                     </span>
-                                                    <span class="text-sm font-medium text-white  font-['Bricolage_Grotesque',sans-serif] action-item-label">
+                                                    <span class="text-sm text-white font-['Bricolage_Grotesque',sans-serif] action-item-label">
                                                         Clients
                                                     </span>
                                                     <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif]">
-                                                        Search our Featured Content
+                                                        Featured Content
                                                     </span>
                                                 </div>
                                             </div>
@@ -94,7 +97,43 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <div class="border-t border-[#3A3A3A] mt-2"></div>
+                                    <li class="px-3 py-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item " style="opacity: 1; transform: none;">
+                                        <a href="/gallery" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
+                                            <div class="flex items-center gap-2 justify-between">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-gray-300">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="h-4 w-4 text-[#FDFBD8]"
+                                                        >
+                                                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                                            <circle cx="12" cy="13" r="4" />
+                                                        </svg>
+                                                    </span>
+                                                    <span class="text-sm text-white font-['Bricolage_Grotesque',sans-serif] action-item-label">
+                                                        Current Works
+                                                    </span>
+                                                    <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif]">
+                                                       Our Content
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif] text-4xl">
+                                                    Gallery
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div class="border-t border-[#3A3A3A]"></div>
                                     <li class="px-3 pt-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item " style="opacity: 1; transform: none;">
                                         <a href="/contact" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
                                             <div class="flex items-center gap-2 justify-between">
@@ -107,7 +146,7 @@
                                                             <circle cx="11" cy="11" r="2"></circle>
                                                         </svg>
                                                     </span>
-                                                    <span class="text-sm font-medium text-white  font-['Bricolage_Grotesque',sans-serif] action-item-label">
+                                                    <span class="text-sm text-white font-['Bricolage_Grotesque',sans-serif] action-item-label">
                                                         Work With Me
                                                     </span>
                                                     <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif]">
@@ -126,7 +165,7 @@
                                 <div class="border-t border-[#3A3A3A] my-2"></div>
                                     <div class="px-3 pb-2">
                                         <div class="flex flex-col gap-2">
-                                            <!-- <a href="/packages" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
+                                            <a href="/packages" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package h-3 w-3">
                                                     <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
                                                     <path d="M12 22V12"></path>
@@ -134,7 +173,7 @@
                                                     <path d="m7.5 4.27 9 5.15"></path>
                                                 </svg>
                                                 <span>Packages</span>
-                                            </a> -->
+                                            </a>
                                             <a href="/newsletter" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3">
                                                     <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -149,11 +188,18 @@
                                                 </svg>
                                                 <span>Shop</span>
                                             </a>
+                                            <a href="/trading" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up h-3 w-3">
+                                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                                    <polyline points="16 7 22 7 22 13"></polyline>
+                                                </svg>
+                                                <span>Trading</span>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="border-t border-[#3A3A3A] pt-3 pb-2 px-3">
                                         <h4 class="text-xs font-medium text-gray-300 mb-2 font-['Bricolage_Grotesque',sans-serif]">Follow for more:</h4>
-                                        <div class="flex flex-col gap-2">
+                                        <div class="flex gap-2" style="flex-flow: column wrap; max-height: 5.5rem;">
                                             <a href="https://www.instagram.com/ellipsis_etcetera/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram h-3 w-3">
                                                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
@@ -162,22 +208,58 @@
                                                 </svg>
                                                 <span>Instagram</span>
                                             </a>
-                                            <!-- <a href="https://www.tiktok.com/@ohneis652" target="_blank" rel="noreferrer noeferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
+                                            <a href="https://www.tiktok.com/@ohneis652" target="_blank" rel="noreferrer noeferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
                                                     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
                                                 </svg>
                                                 <span>TikTok</span>
-                                            </a> -->
+                                            </a>
+                                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                                </svg>
+                                                <span>X</span>
+                                            </a>
+                                            <a href="https://reddit.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                                                    <circle cx="12" cy="14" r="6"/>
+                                                    <circle cx="9" cy="13" r="1" fill="currentColor"/>
+                                                    <circle cx="15" cy="13" r="1" fill="currentColor"/>
+                                                    <path d="M10 17c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/>
+                                                    <path d="M12 8V2"/>
+                                                    <path d="M12 2 8 6"/>
+                                                    <circle cx="18" cy="10" r="2"/>
+                                                </svg>
+                                                <span>Reddit</span>
+                                            </a>
+                                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                                    <rect width="4" height="12" x="2" y="9"/>
+                                                    <circle cx="4" cy="4" r="2"/>
+                                                </svg>
+                                                <span>LinkedIn</span>
+                                            </a>
+                                            <a href="https://threads.net" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                                                    <path d="M19 7.5c-1.333-3-4-4.5-7-4.5-4.418 0-8 3.582-8 8v2c0 4.418 3.582 8 8 8 3 0 5.667-1.5 7-4.5"/>
+                                                    <path d="M19 7.5c-.667 2-1 4.167-1 6.5 0 1.5-.5 2.5-1.5 3s-2.5.5-4.5-.5"/>
+                                                    <path d="M12 8c2.667 0 4 1.333 4 4 0 1.733-.667 2.667-2 2.667"/>
+                                                </svg>
+                                                <span>Threads</span>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="mt-2 px-3 py-2 border-t border-[#3A3A3A]">
+                                    <div class="px-3 py-2 border-t border-[#3A3A3A]">
                                         <div class="flex items-center justify-between text-xs text-gray-500 font-['Bricolage_Grotesque',sans-serif]">
                                             <span>&copy; 2026 Ellipsis Etcetera</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-[#FDFBD8] hover:text-white">
-                                                <circle cx="6" cy="12" r="2" />
-                                                <circle cx="12" cy="12" r="2" />
-                                                <circle cx="18" cy="12" r="2" />
-                                            </svg>
+                                            <a href="/mayhemprojects" class="hover:opacity-80 transition-opacity">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-[#FDFBD8] hover:text-white cursor-pointer">
+                                                    <circle cx="6" cy="12" r="2" />
+                                                    <circle cx="12" cy="12" r="2" />
+                                                    <circle cx="18" cy="12" r="2" />
+                                                </svg>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -185,44 +267,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full z-10 relative">
-                    <div class="w-full max-w-xl mx-auto px-4 pt-2">
-                    <div class="w-full max-w-sm mx-auto">
-                        <label class="text-xs font-medium text-gray-400 mb-1 block font-['Bricolage_Grotesque',sans-serif]">Reviews:</label>
-                        <div class="backdrop-blur-md bg-[#252525]/80 border border-[#3A3A3A] rounded-lg p-4 h-[140px] flex flex-col justify-between">
-                            <blockquote class="text-white text-xs leading-relaxed mb-3 font-['Bricolage_Grotesque',sans-serif] flex-1 overflow-hidden">"<!-- -->It's not just prompts, it's a concise guide to how they work 👌🏻👌🏻👌🏻<!-- -->"</blockquote>
-                            <div class="flex items-center justify-between flex-shrink-0">
-                                <p class="text-gray-300 text-xs font-medium font-['Bricolage_Grotesque',sans-serif]">Customer Review, Customer Business</p>
-                                <div class="flex items-center gap-0.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#E9D502] text-[#E9D502]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#E9D502] text-[#E9D502]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#E9D502] text-[#E9D502]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#E9D502] text-[#E9D502]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#E9D502] text-[#E9D502]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex justify-center mt-4 gap-1">
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-[#FDFBD8]"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<x-reviews-carousel />
             </main>
         </div>
         <script src="/_next/static/chunks/webpack-29957205745576aa.js" async=""></script>

@@ -460,7 +460,7 @@
                                                             </span>
                                                             <span class="ml-5 text-sm font-medium  text-white/70 font-['Bricolage_Grotesque',sans-serif] action-item-label">
                                                                 Make sure to check your spam folder for my reply or add my email address to your contacts: 
-                                                                <br/><a href="mailto:admin@ellipsisetc.xyz" class="cursor-pointer hover:text-[#FDFBD8]">admin@ellipsisetc.xyz</a>.
+                                                                <br/><a href="mailto:mgmt@ellipsisetc.xyz" class="cursor-pointer hover:text-[#FDFBD8]">mgmt@ellipsisetc.xyz</a>.
                                                             </span>
                                                         </div>
                                                     </div>
@@ -495,8 +495,9 @@
                                         </button>
                                     </div>
                                 </div>
+                                <p class="text-xs text-gray-500 font-['Bricolage_Grotesque',sans-serif] text-center mt-4">For other questions contact <a href="mailto:hello@ellipsisetc.xyz" class="text-[#FDFBD8] hover:underline">hello@ellipsisetc.xyz</a></p>
                                 @if(session('success'))
-                                    <div class="mt-2 text-green-400 text-sm">{{ session('success') }}</div>
+                                    <div class="mt-2 text-emerald-300 text-sm">{{ session('success') }}</div>
                                 @endif
                             </form>
                         </div>

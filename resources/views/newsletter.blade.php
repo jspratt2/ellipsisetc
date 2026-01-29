@@ -67,7 +67,7 @@
                                             </li>
                                             <div class="border-t border-[#3A3A3A]"></div>
                                             <li class="px-3 py-2 font-['Bricolage_Grotesque',sans-serif]" style="opacity: 1; transform: none;">
-                                                <input type="email" name="email" placeholder="Email*" value="{{ old('email') }}" required class="mt-1 mb-1 rounded-md bg-transparent border border-white/20 p-3 text-sm font-medium text-white placeholder-white/50 font-['Bricolage_Grotesque',sans-serif] justify-between w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#FF5349]"></input>
+                                                <input type="email" name="email" placeholder="Email*" value="{{ old('email') }}" required class="mt-1 mb-1 rounded-md bg-transparent border border-white/20 p-3 text-sm font-medium text-white placeholder-white/50 font-['Bricolage_Grotesque',sans-serif] justify-between w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#069494]"></input>
                                                 @if($errors->has('email'))
                                                     <div class="text-xs text-red-400 mb-1">{{ $errors->first('email') }}</div>
                                                 @endif

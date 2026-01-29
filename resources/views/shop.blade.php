@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Laravel') }} - Shop</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=bricolage-grotesque:400,500,600,700" rel="stylesheet" />
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -19,219 +19,225 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#2D2D2D] overflow-hidden h-full">
-        <div class="min-h-screen w-screen flex flex-col bg-[#2D2D2D] relative">
-            <main class="flex-1 flex flex-col items-center justify-center p-4 relative gap-8">
-                <div class="w-full max-w-xl z-10 relative pt-8">
-                    <div class="w-full max-w-xl mx-auto font-['Bricolage_Grotesque',sans-serif] relative z-10">
-                        <div class="relative flex flex-col justify-start items-center min-h-[300px]">
-                            <div class="w-full max-w-md sticky top-0 z-10 pt-4 pb-1 rounded-t-lg bg-transparent">
-                                <div class="relative">
-                                    <div class="pl-3 pr-9 py-1.5 h-9 text-sm rounded-lg border border-zinc-700 text-white font-['Bricolage_Grotesque',sans-serif] flex items-center cursor-pointer backdrop-blur-md bg-zinc-800/70" tabindex="0" role="textbox" aria-label="Search">
-                                        Ellipsis Etcetera
-                                    </div>
-                                    <div class="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4">
-                                        <div style="opacity: 1; transform: none;"></div>
-                                    </div>
-                                </div>
+    <body class="bg-[#2D2D2D] min-h-screen font-['Bricolage_Grotesque',sans-serif]">
+        <div class="min-h-screen w-full">
+            <main class="min-h-screen lg:flex lg:items-stretch">
+                
+                <!-- Left Side: Profile Header (sticky on desktop) -->
+                <div class="lg:w-80 lg:flex-shrink-0 lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:justify-center lg:border-r lg:border-[#3A3A3A]">
+                    <div class="text-center px-6 py-8 lg:py-0">
+                        <!-- Avatar -->
+                        <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-[#FF5349] via-[#FDFBD8] to-[#FF5349] p-1">
+                            <div class="w-full h-full rounded-full bg-[#2D2D2D] flex items-center justify-center overflow-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="" viewBox="0 0 24 24" fill="currentColor" class="text-[#FF5349]">
+                                    <circle cx="6" cy="12" r="2" />
+                                    <circle cx="12" cy="12" r="2" />
+                                    <circle cx="18" cy="12" r="2" />
+                                </svg>
                             </div>
-                            <div class="w-full max-w-md">
-                                <div class="w-full rounded-b-xl shadow-sm overflow-hidden backdrop-blur-md bg-[#252525]/80 border border-[#3A3A3A]" style="opacity: 1; height: auto;">
-                                    <ul class="font-['Bricolage_Grotesque',sans-serif]">
-                                        <li class="px-3 py-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item mb-2" style="opacity: 1; transform: none;">
-                                            <a href="/course" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
-                                                <div class="flex items-center gap-2 justify-between">
-                                                    <div class="flex items-center gap-2">
-                                                        <span class="text-gray-300">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-4 w-4 text-[#FF5349]">
-                                                                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
-                                                                <path d="M22 10v6"></path>
-                                                                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-                                                            </svg>
-                                                        </span>
-                                                        <span class="text-sm font-semibold text-white font-bold font-['Bricolage_Grotesque',sans-serif] action-item-label">
-                                                            Courses
-                                                        </span>
-                                                    <span class="text-xs text-white font-['Bricolage_Grotesque',sans-serif]">
-                                                        Learn Prompting, Marketing, &amp; AI Design
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-xs text-white text-right font-['Bricolage_Grotesque',sans-serif] shimmer-text">
-                                                    Learn
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="px-3 py-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item " style="opacity: 1; transform: none;">
-                                        <a href="/client" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
-                                            <div class="flex items-center gap-2 justify-between">
-                                                <div class="flex items-center gap-2">
-                                                    <span class="text-gray-300">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4 text-[#FF5349]">
-                                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                                            <circle cx="9" cy="7" r="4"></circle>
-                                                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="text-sm font-medium text-white  font-['Bricolage_Grotesque',sans-serif] action-item-label">
-                                                        Clients
-                                                    </span>
-                                                    <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif]">
-                                                        Search our Featured Content
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-xs text-gray-400 text-right font-['Bricolage_Grotesque',sans-serif] ">
-                                                    Browse
-                                                </span>
-                                            </div>
-                                        </a>
-                                        <div class="border-t border-[#3A3A3A] mt-2"></div>
-                                    </li>
-                                    <li class="px-3 py-2 hover:bg-zinc-800/50 rounded-md font-['Bricolage_Grotesque',sans-serif] action-item " style="opacity: 1; transform: none;">
-                                        <a href="/contact" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full cursor-pointer">
-                                            <div class="flex items-center gap-2 justify-between">
-                                                <div class="flex items-center gap-2">
-                                                    <span class="text-gray-300">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pen-tool h-4 w-4 text-[#FF5349]">
-                                                            <path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"></path>
-                                                            <path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"></path>
-                                                            <path d="m2.3 2.3 7.286 7.286"></path>
-                                                            <circle cx="11" cy="11" r="2"></circle>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="text-sm font-medium text-white  font-['Bricolage_Grotesque',sans-serif] action-item-label">
-                                                        Work With Me
-                                                    </span>
-                                                    <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif]">
-                                                        Projects &amp; Collab
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-xs text-gray-400 text-right font-['Bricolage_Grotesque',sans-serif] ">
-                                                    Contact
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="border-t border-[#3A3A3A] my-2"></div>
-                                    <div class="px-3 pb-2">
-                                        <div class="flex flex-col gap-2">
-                                            <a href="/prompts" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FF5349] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package h-3 w-3">
-                                                    <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
-                                                    <path d="M12 22V12"></path>
-                                                    <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
-                                                    <path d="m7.5 4.27 9 5.15"></path>
-                                                </svg>
-                                                <span>Prompts</span>
-                                            </a>
-                                            <a href="/newsletter" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FF5349] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3">
-                                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                                </svg>
-                                                <span>Newsletter</span>
-                                            </a>
-                                            <a href="/shop" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FF5349] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag h-3 w-3">
-                                                    <path d="M6 8h12l-1 12H7L6 8z"></path>
-                                                    <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
-                                                </svg>
-                                                <span>Shop</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-[#3A3A3A] pt-3 pb-2 px-3">
-                                        <h4 class="text-xs font-medium text-gray-300 mb-2 font-['Bricolage_Grotesque',sans-serif]">Follow for more:</h4>
-                                        <div class="flex flex-col gap-2">
-                                            <a href="https://www.instagram.com/ellipsis_etcetera/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FF5349] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram h-3 w-3">
-                                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                                                </svg>
-                                                <span>Instagram</span>
-                                            </a>
-                                            <a href="https://www.tiktok.com/@ohneis652" target="_blank" rel="noreferrer noeferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FF5349] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
-                                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-                                                </svg>
-                                                <span>TikTok</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="mt-2 px-3 py-2 border-t border-[#3A3A3A]">
-                                        <div class="flex items-center justify-between text-xs text-gray-500 font-['Bricolage_Grotesque',sans-serif]">
-                                            <span>&copy; 2026 Ellipsis Etcetera</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-[#FF5349] hover:text-white">
-                                                <circle cx="6" cy="12" r="2" />
-                                                <circle cx="12" cy="12" r="2" />
-                                                <circle cx="18" cy="12" r="2" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        
+                        <!-- Name -->
+                        <h1 class="text-xl font-bold text-[#FDFBD8] mb-2">Ellipsis Etcetera</h1>
+                        
+                        <!-- Bio -->
+                        <div class="mb-6">
+                            <p class="text-gray-400 text-sm mb-1 max-w-xs mx-auto">Enjoy some of our seasonal items / apparel.</p>
+                            <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif] text-4xl font-bold">
+                                <span id="attention-word" class="text-[#FF5349] font-bold transition-opacity duration-500 opacity-100">ATTENTION</span>
+                                Our newsletter subscribers and clients get early access to new drops
+                            </span>
+                        </div>
+
+                        <style>
+                            @keyframes fadeInOut {
+                                0%, 100% { opacity: 0; }
+                                10%, 90% { opacity: 1; }
+                            }
+                            .attention-fade {
+                                animation: fadeInOut 2.5s ease-in-out;
+                            }
+                        </style>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const attentionWords = [
+                                    'ATTENTION',      // English
+                                    'ATTENTION',      // French
+                                    'ACHTUNG',        // German
+                                    'ATENCIÓN',       // Spanish
+                                    'ATENCIÓ',        // Catalan
+                                    'ATTENZIONE',     // Italian
+                                    'ВНИМАНИЕ',       // Russian
+                                    'УВАГА',          // Ukrainian
+                                    'POZOR',          // Slovak
+                                    'POZOR',          // Czech
+                                    'VËMENDJE',       // Albanian
+                                    'DİKKAT',         // Turkish
+                                    '注意',            // Chinese
+                                    'CHÚ Ý',          // Vietnamese
+                                    'انتباه',          // Arabic
+                                    'PAŽNJA',         // Croatian
+                                    'ПАЖЊА'           // Serbian
+                                ];
+
+                                const element = document.getElementById('attention-word');
+                                let currentIndex = 0;
+
+                                function cycleWord() {
+                                    // Fade out
+                                    element.style.opacity = '0';
+                                    
+                                    setTimeout(() => {
+                                        // Change word
+                                        currentIndex = (currentIndex + 1) % attentionWords.length;
+                                        element.textContent = attentionWords[currentIndex];
+                                        
+                                        // Fade in
+                                        element.style.opacity = '1';
+                                    }, 500);
+                                }
+
+                                // Cycle every 2.5 seconds
+                                setInterval(cycleWord, 2500);
+                            });
+                        </script>
+                        <!-- Social Links -->
+                        <div class="flex justify-center gap-4 mb-6 lg:mb-8">
+                            <a href="https://www.instagram.com/ellipsis_etcetera/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#FF5349] transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@ohneis652" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#FF5349] transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                                </svg>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#FF5349] transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+                                    <path d="m10 15 5-3-5-3z"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Back to Home (desktop only in sidebar) -->
+                        <div class="hidden lg:block">
+                            <a href="/" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#FDFBD8] transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m12 19-7-7 7-7"/>
+                                    <path d="M19 12H5"/>
+                                </svg>
+                                Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile divider -->
+                <div class="border-t border-[#3A3A3A] mx-4 lg:hidden"></div>
+
+                <!-- Right Side: Products Grid -->
+                <div class="flex-1 p-4 lg:p-8 lg:overflow-y-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
+                        @php
+                            $products = [
+                                [
+                                    'title' => 'Seasonal Tee — Winter 2026',
+                                    'description' => 'Limited edition winter drop. Premium heavyweight cotton with seasonal graphic.',
+                                    'price' => 38,
+                                    'cta' => 'Buy Now',
+                                    'link' => '/shop/seasonal-tee-winter-2026',
+                                    'image' => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
+                                    'stock' => 24,
+                                ],
+                                [
+                                    'title' => 'Seasonal Hoodie — Winter 2026',
+                                    'description' => 'Limited edition winter drop. Cozy heavyweight hoodie with seasonal embroidery.',
+                                    'price' => 72,
+                                    'cta' => 'Buy Now',
+                                    'link' => '/shop/seasonal-hoodie-winter-2026',
+                                    'image' => 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop',
+                                    'stock' => 18,
+                                ],
+                                [
+                                    'title' => 'Mystery Sticker Pack',
+                                    'description' => 'Randomized collection of 5 holographic stickers. Every pack is different!',
+                                    'price' => 12,
+                                    'cta' => 'Surprise Me',
+                                    'link' => '/shop/mystery-sticker-pack',
+                                    'image' => 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop',
+                                ],
+                                [
+                                    'title' => 'Ellipsis Beanie',
+                                    'description' => 'Knit beanie with embroidered "..." logo. One size fits most.',
+                                    'price' => 28,
+                                    'cta' => 'Buy Now',
+                                    'link' => '/shop/ellipsis-beanie',
+                                    'image' => 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=400&h=400&fit=crop',
+                                ],
+                                [
+                                    'title' => 'Creator Coffee Mug',
+                                    'description' => 'Ceramic mug for your late night prompting sessions. 12oz capacity.',
+                                    'price' => 18,
+                                    'cta' => 'Buy Now',
+                                    'link' => '/shop/creator-coffee-mug',
+                                    'image' => 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop',
+                                ],
+                                [
+                                    'title' => 'Overflow Shirts',
+                                    'description' => 'Leftovers from previous seasonal tees. Assorted designs, limited sizes.',
+                                    'price' => 22,
+                                    'cta' => 'View Options',
+                                    'link' => '/shop/overflow-shirts',
+                                    'image' => 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=400&fit=crop',
+                                ],
+                            ];
+                        @endphp
+
+                        @foreach($products as $product)
+                            <x-shop.product 
+                                :title="$product['title']"
+                                :description="$product['description']"
+                                :price="$product['price']"
+                                :cta="$product['cta']"
+                                :image="$product['image'] ?? null"
+                                :link="$product['link'] ?? '#'"
+                                :stock="$product['stock'] ?? null"
+                            />
+                        @endforeach
+                    </div>
+
+                    <!-- Mobile Footer -->
+                    <div class="lg:hidden mt-6">
+                        <div class="border-t border-[#3A3A3A] pt-4 mb-4"></div>
+                        
+                        <!-- Back to Home -->
+                        <div class="text-center mb-4">
+                            <a href="/" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#FDFBD8] transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m12 19-7-7 7-7"/>
+                                    <path d="M19 12H5"/>
+                                </svg>
+                                Back to Home
+                            </a>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="text-center">
+                            <div class="flex items-center justify-center gap-2 text-xs text-gray-600">
+                                <span>&copy; 2026 Ellipsis Etcetera</span>
+                                <span>•</span>
+                                <a href="#" class="hover:text-[#FDFBD8] transition-colors">Privacy Policy</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full z-10 relative">
-                    <div class="w-full max-w-xl mx-auto px-4 pt-2">
-                    <div class="w-full max-w-sm mx-auto">
-                        <label class="text-xs font-medium text-gray-400 mb-1 block font-['Bricolage_Grotesque',sans-serif]">Reviews:</label>
-                        <div class="backdrop-blur-md bg-[#252525]/80 border border-[#3A3A3A] rounded-lg p-4 h-[140px] flex flex-col justify-between">
-                            <blockquote class="text-white text-xs leading-relaxed mb-3 font-['Bricolage_Grotesque',sans-serif] flex-1 overflow-hidden">"<!-- -->It's not just prompts, it's a concise guide to how they work 👌🏻👌🏻👌🏻<!-- -->"</blockquote>
-                            <div class="flex items-center justify-between flex-shrink-0">
-                                <p class="text-gray-300 text-xs font-medium font-['Bricolage_Grotesque',sans-serif]">Reviewer Name</p>
-                                <div class="flex items-center gap-0.5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#FF5349] text-[#FF5349]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#FF5349] text-[#FF5349]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#FF5349] text-[#FF5349]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#FF5349] text-[#FF5349]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3 fill-[#FF5349] text-[#FF5349]">
-                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex justify-center mt-4 gap-1">
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-[#FF5349]"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                            <button class="w-1.5 h-1.5 rounded-full transition-colors bg-gray-600"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             </main>
         </div>
-        <script src="/_next/static/chunks/webpack-29957205745576aa.js" async=""></script>
-        <script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script>
-        <script>self.__next_f.push([1,"1:HL[\"/_next/static/css/03c281dd8022f151.css\",\"style\"]\n"])</script>
-        <script>self.__next_f.push([1,"2:I[2846,[],\"\"]\n4:I[9960,[\"239\",\"static/chunks/239-dadcf913496fc37d.js\",\"461\",\"static/chunks/461-7dd5033a56955239.js\",\"931\",\"static/chunks/app/page-50f6b5ff66505adb.js\"],\"default\"]\n5:I[5896,[\"239\",\"static/chunks/239-dadcf913496fc37d.js\",\"461\",\"static/chunks/461-7dd5033a56955239.js\",\"931\",\"static/chunks/app/page-50f6b5ff66505adb.js\"],\"default\"]\n6:I[346,[\"185\",\"static/chunks/app/layout-f1b50c12954217aa.js\"],\"ThemeProvider\"]\n7:I[4707,[],\"\"]\n8:I[6423,[],\"\"]\na:I[1060,[],\"\"]\nb:[]\n"])</script>
-        <script>self.__next_f.push([1,"0:[\"$\",\"$L2\",null,{\"buildId\":\"vuNNAxY_uEFcxYVlHtFlO\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"\"],\"initialTree\":[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"__PAGE__\",{},[[\"$L3\",[\"$\",\"div\",null,{\"className\":\"min-h-screen w-screen flex flex-col bg-[#2D2D2D] relative\",\"children\":[\"$\",\"main\",null,{\"className\":\"flex-1 flex flex-col items-center justify-center p-4 relative gap-8\",\"children\":[[\"$\",\"div\",null,{\"className\":\"w-full max-w-xl z-10 relative pt-8\",\"children\":[\"$\",\"$L4\",null,{}]}],[\"$\",\"div\",null,{\"className\":\"w-full z-10 relative\",\"children\":[\"$\",\"$L5\",null,{}]}]]}]}],null],null],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/03c281dd8022f151.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"dark h-full\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"meta\",null,{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\"}],[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"https://use.typekit.net/ixk1nkz.css\"}]]}],[\"$\",\"body\",null,{\"className\":\"bg-[#2D2D2D] overflow-hidden h-full\",\"children\":[\"$\",\"$L6\",null,{\"attribute\":\"class\",\"defaultTheme\":\"dark\",\"enableSystem\":false,\"disableTransitionOnChange\":true,\"children\":[\"$\",\"$L7\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]}]]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L9\"],\"globalErrorComponent\":\"$a\",\"missingSlots\":\"$Wb\"}]\n"])</script>
-        <script>self.__next_f.push([1,"9:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Ohneis Prompts\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Find AI prompts, newsletters, and collaboration opportunities\"}],[\"$\",\"meta\",\"4\",{\"name\":\"generator\",\"content\":\"v0.app\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:title\",\"content\":\"Ohneis Prompts\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:description\",\"content\":\"Find AI prompts, newsletters, and collaboration opportunities\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:image:alt\",\"content\":\"Ohneis Prompts\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image\",\"content\":\"https://www.ohneis652.com/opengraph-image?3dbf1a2d5e443fdc\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:title\",\"content\":\"Ohneis Prompts\"}],[\"$\",\"meta\",\"14\",{\"name\":\"twitter:description\",\"content\":\"Find AI prompts, newsletters, and collaboration opportunities\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:image:alt\",\"content\":\"Ohneis Prompts\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:image\",\"content\":\"https://www.ohneis652.com/twitter-image?3dbf1a2d5e443fdc\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:image:height\",\"content\":\"630\"}]]\n3:null\n"])</script>
-        <next-route-announcer style="position: absolute;">
-            <template shadowrootmode="open">
-                <div aria-live="assertive" id="__next-route-announcer__" role="alert" style="position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;"></div>
-            </template>
-        </next-route-announcer>
     </body>
 </html>
