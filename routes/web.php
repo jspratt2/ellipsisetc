@@ -30,9 +30,11 @@ Route::get('/course', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
+
 Route::get('/newsletter', function () {
     return view('newsletter');
 });
+
 Route::get('/packages', function () {
     return view('packages-new');
 });
