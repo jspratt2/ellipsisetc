@@ -10,10 +10,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])
+    ->name('newsletter.subscribe');
+
+Route::get('/newsletter', function () {
+    return view('newsletter');
+});
 
 Route::get('/clients', function () {
-    return view('clients.index');
+    return view('comingsoon');
+});
+
+Route::get('/gallery', function () {
+    return view('comingsoon');
 });
 
 Route::get('/contact', function () {
@@ -24,15 +33,8 @@ Route::get('/contact', function () {
         ])->name('contact.send'
     );
 
-Route::get('/course', function () {
-    return view('courses');
-});
 Route::get('/courses', function () {
-    return view('courses');
-});
-
-Route::get('/newsletter', function () {
-    return view('newsletter');
+    return view('comingsoon');
 });
 
 Route::get('/packages', function () {
@@ -40,9 +42,6 @@ Route::get('/packages', function () {
 });
 Route::get('/shop', function () {
     return view('shop-new');
-});
-Route::get('/trading', function () {
-    return view('trading');
 });
 Route::get('/mayhemprojects', function () {
     return view('mayhemprojects');
@@ -158,11 +157,11 @@ Route::get('/shop/{slug}', function ($slug) {
     return view('product', ['product' => $products[$slug]]);
 })->name('shop.product');
 
-Route::get('/gallery', [GalleryController::class, 'index'])
-    ->name('gallery.index');
+// Route::get('/gallery', [GalleryController::class, 'index'])
+//     ->name('comingsoon');
 
-Route::get('/gallery/{id}', [GalleryController::class, 'show'])
-    ->name('gallery.show');
+// Route::get('/gallery/{id}', [GalleryController::class, 'show'])
+//     ->name('gallery.show');
 
 Route::get('/clients/{id}', function ($id) {
     $clientItems = [

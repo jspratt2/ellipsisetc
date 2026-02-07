@@ -34,11 +34,11 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-    'mailchimp' => [
-        'key' => env('MAILCHIMP_API_KEY'),
-        'audience' => env('MAILCHIMP_AUDIENCE_ID'),
-        'dc' => env('MAILCHIMP_DC'),
+    'mailgun' => [
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+        'endpoint' => env('MAILGUN_ENDPOINT', 'https://api.mailgun.net'),
+        'list_address' => env('MAILGUN_LIST_ADDRESS'),
+        'scheme' => 'https',
     ],
-
-
 ];

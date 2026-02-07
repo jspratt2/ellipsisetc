@@ -122,13 +122,13 @@
                                                         Current Works
                                                     </span>
                                                     <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif]">
-                                                       Our Content
+                                                       Our Gallery
                                                     </span>
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-2">
                                                 <span class="text-xs text-gray-400 font-['Bricolage_Grotesque',sans-serif] text-4xl">
-                                                    Gallery
+                                                    Browse
                                                 </span>
                                             </div>
                                         </a>
@@ -163,93 +163,8 @@
                                     </li>
                                 </ul>
                                 <div class="border-t border-[#3A3A3A] my-2"></div>
-                                    <div class="px-3 pb-2">
-                                        <div class="flex flex-col gap-2">
-                                            <a href="/packages" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package h-3 w-3">
-                                                    <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
-                                                    <path d="M12 22V12"></path>
-                                                    <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
-                                                    <path d="m7.5 4.27 9 5.15"></path>
-                                                </svg>
-                                                <span>Packages</span>
-                                            </a>
-                                            <a href="/newsletter" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3">
-                                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                                </svg>
-                                                <span>Newsletter</span>
-                                            </a>
-                                            <a href="/shop" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag h-3 w-3">
-                                                    <path d="M6 8h12l-1 12H7L6 8z"></path>
-                                                    <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
-                                                </svg>
-                                                <span>Shop</span>
-                                            </a>
-                                            <a href="/trading" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up h-3 w-3">
-                                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                                                    <polyline points="16 7 22 7 22 13"></polyline>
-                                                </svg>
-                                                <span>Trading</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-[#3A3A3A] pt-3 pb-2 px-3">
-                                        <h4 class="text-xs font-medium text-gray-300 mb-2 font-['Bricolage_Grotesque',sans-serif]">Follow for more:</h4>
-                                        <div class="flex gap-2" style="flex-flow: column wrap; max-height: 5.5rem;">
-                                            <a href="https://www.instagram.com/ellipsis_etcetera/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram h-3 w-3">
-                                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                                                </svg>
-                                                <span>Instagram</span>
-                                            </a>
-                                            <a href="https://www.tiktok.com/@ohneis652" target="_blank" rel="noreferrer noeferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
-                                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-                                                </svg>
-                                                <span>TikTok</span>
-                                            </a>
-                                            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
-                                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                                                </svg>
-                                                <span>X</span>
-                                            </a>
-                                            <a href="https://reddit.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
-                                                    <circle cx="12" cy="14" r="6"/>
-                                                    <circle cx="9" cy="13" r="1" fill="currentColor"/>
-                                                    <circle cx="15" cy="13" r="1" fill="currentColor"/>
-                                                    <path d="M10 17c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/>
-                                                    <path d="M12 8V2"/>
-                                                    <path d="M12 2 8 6"/>
-                                                    <circle cx="18" cy="10" r="2"/>
-                                                </svg>
-                                                <span>Reddit</span>
-                                            </a>
-                                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
-                                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                                    <rect width="4" height="12" x="2" y="9"/>
-                                                    <circle cx="4" cy="4" r="2"/>
-                                                </svg>
-                                                <span>LinkedIn</span>
-                                            </a>
-                                            <a href="https://threads.net" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-gray-400 hover:text-[#FDFBD8] font-['Bricolage_Grotesque',sans-serif]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
-                                                    <path d="M19 7.5c-1.333-3-4-4.5-7-4.5-4.418 0-8 3.582-8 8v2c0 4.418 3.582 8 8 8 3 0 5.667-1.5 7-4.5"/>
-                                                    <path d="M19 7.5c-.667 2-1 4.167-1 6.5 0 1.5-.5 2.5-1.5 3s-2.5.5-4.5-.5"/>
-                                                    <path d="M12 8c2.667 0 4 1.333 4 4 0 1.733-.667 2.667-2 2.667"/>
-                                                </svg>
-                                                <span>Threads</span>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <x-nav-links />
+                                    <x-socials-footer />
                                     <div class="px-3 py-2 border-t border-[#3A3A3A]">
                                         <div class="flex items-center justify-between text-xs text-gray-500 font-['Bricolage_Grotesque',sans-serif]">
                                             <span>&copy; 2026 Ellipsis Etcetera</span>
@@ -267,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-<x-reviews-carousel />
+            <x-reviews-carousel />
             </main>
         </div>
         <script src="/_next/static/chunks/webpack-29957205745576aa.js" async=""></script>

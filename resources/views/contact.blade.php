@@ -31,12 +31,9 @@
                                     <div class="pl-3 pr-9 py-1 h-9 text-sm rounded-lg border border-zinc-700 text-white font-['Bricolage_Grotesque',sans-serif] flex items-center cursor-pointer backdrop-blur-md bg-zinc-800/70" tabindex="0" role="textbox" aria-label="Search">
                                         Contact Inquiry
                                     </div>
-                                    <div class="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4">
-                                        <div style="opacity: 1; transform: none;"></div>
-                                    </div>
                                 </div>
                             </div>
-                            <form action="{{ route('contact.send') }}" method="POST">
+                            <form action="{{ route('contact.send') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="w-full max-w-md h-128 overflow-y-auto [&::-webkit-scrollbar]:hidden">
                                     <div class="w-full rounded-xl shadow-sm overflow-hidden backdrop-blur-md bg-[#252525]/80 border border-[#3A3A3A]" style="opacity: 1; height: auto;">
@@ -112,7 +109,13 @@
                                                         <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Collaboration
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
+                                                        <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Ecommerce Consulting
+                                                    </label>
+                                                    <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
                                                         <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Web development
+                                                    </label>
+                                                    <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
+                                                        <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Rebranding
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
                                                         <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Design
@@ -121,10 +124,10 @@
                                                         <input type="checkbox" name="project_type[]" class="accent-[#069494]" /> Product photos
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
-                                                        <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Social ads (short-form video)
+                                                        <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Social ads
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
-                                                        <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Brand identity
+                                                        <input type="checkbox" name="project_type[]" class="accent-[#069494]" />Client acquisition / retention
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
                                                         <input type="checkbox" name="project_type[]" class="accent-[#069494]" />UI/UX (web, app)
@@ -231,46 +234,19 @@
                                                     <input
                                                         type="radio"
                                                         name="budget"
-                                                        value="1000_2000"
+                                                        value="1000_5000"
                                                         class="accent-[#069494]"
                                                     />
-                                                    1,000–2,000
+                                                    1,000–5,000
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
                                                     <input
                                                         type="radio"
                                                         name="budget"
-                                                        value="2000_3500"
+                                                        value="5000_10000"
                                                         class="accent-[#069494]"
                                                     />
-                                                    2,000–3,500
-                                                    </label>
-                                                    <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="budget"
-                                                        value="3500_5000"
-                                                        class="accent-[#069494]"
-                                                    />
-                                                    3,500–5,000
-                                                    </label>
-                                                    <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="budget"
-                                                        value="5000_7500"
-                                                        class="accent-[#069494]"
-                                                    />
-                                                    5,000–7,500
-                                                    </label>
-                                                    <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
-                                                    <input
-                                                        type="radio"
-                                                        name="budget"
-                                                        value="7500_10000"
-                                                        class="accent-[#069494]"
-                                                    />
-                                                    7,500–10,000
+                                                    5,000–10,000
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
                                                     <input
@@ -292,7 +268,7 @@
                                                     </label>
                                                 </div>
                                                 <span class="mt-2 block text-xs font-medium text-white/70">
-                                                    Provide a rough estimate.
+                                                    Provide a rough estimate in USD ($).
                                                 </span>
                                             </li>
                                             <div class="mt-2 border-t border-[#3A3A3A]"></div>
@@ -409,7 +385,7 @@
                                                         <input type="checkbox" name="assets[]" class="accent-[#069494]" />Logo
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
-                                                        <input type="checkbox" name="assets[]" class="accent-[#069494]" />Colo palette
+                                                        <input type="checkbox" name="assets[]" class="accent-[#069494]" />Color palette
                                                     </label>
                                                     <label class="flex items-center gap-2 text-sm font-medium text-white cursor-pointer">
                                                         <input type="checkbox" name="assets[]" class="accent-[#069494]" />Typography
@@ -434,6 +410,32 @@
                                                 <span class="mt-1 block text-xs font-medium text-white/70">
                                                     Provide anything else you'd like to share. <br/>Website, socials, etc.
                                                 </span>
+                                                <div class="mt-6 flex flex-col">
+                                                    <label class="text-[#3A3A3A] text-sm mb-2 tracking-wide">Upload a file (optional)</label>
+                                                    <style>
+                                                        .file-upload-input::file-selector-button {
+                                                            padding: 2px 4px;
+                                                            border-radius: 0.25rem;
+                                                            border: 1px solid #3A3A3A;
+                                                            background-color: #252525;
+                                                            color: rgba(255, 255, 255, 0.7);
+                                                            letter-spacing: 0.025em;
+                                                            font-size: small;
+                                                            cursor: pointer;
+                                                            transition: all 0.2s ease;
+                                                        }
+                                                        .file-upload-input::file-selector-button:hover {
+                                                            background-color: #3A3A3A;
+                                                            border-color: #069494;
+                                                            color: #FDFBD8;
+                                                        }
+                                                    </style>
+                                                    <input type="file" name="user_file"
+                                                        class="file-upload-input block w-auto text-xs text-white/70"
+                                                        style="margin: 0 5px; max-width: 100%; outline: none;"
+                                                    />
+                                                    <span class="flex text-xs font-medium text-[#FDFBD8] mt-2 text-center">Accepted: images, pdf, doc, zip, etc. Max 10MB.</span>
+                                                </div>
                                             </li>
                                         </ul>
                                         <div class="px-3 py-2 border-t border-[#3A3A3A]">
