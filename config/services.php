@@ -34,11 +34,10 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-    'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
-        'endpoint' => env('MAILGUN_ENDPOINT', 'https://api.mailgun.net'),
-        'list_address' => env('MAILGUN_LIST_ADDRESS'),
-        'scheme' => 'https',
+    // config/services.php
+    'shopify' => [
+        'store_domain' => env('SHOPIFY_STORE_DOMAIN'),
+        'admin_access_token' => env('SHOPIFY_ADMIN_ACCESS_TOKEN'),
+        'api_version' => env('SHOPIFY_API_VERSION', '2025-01'),
     ],
 ];

@@ -11,46 +11,123 @@ class NewsletterController extends Controller
     public function subscribe(Request $request)
     {
         $data = $request->validate([
-            'email' => ['required', 'email:rfc,dns', 'max:255'],
-            // add name field later if you want
+            'email' => ['required', 'email', 'max:255'],
         ]);
 
         $email = strtolower(trim($data['email']));
 
-        $listAddress = config('services.mailgun.list_address'); // we’ll add this in Step 6
-        $endpoint = rtrim(config('services.mailgun.endpoint', 'https://api.mailgun.net'), '/');
+        $store   = config('services.shopify.store_domain');     // e.g. ellipsis-etcetera.myshopify.com
+        $token   = config('services.shopify.admin_access_token'); // shpat_...
+        $version = config('services.shopify.api_version', '2025-01');
 
-        // Mailgun requires:
-        // POST /v3/lists/{list_address}/members
-        // Body: address, subscribed, upsert, (optional name/vars)
-        // :contentReference[oaicite:4]{index=4}
+        if (!$store || !$token) {
+            Log::error('Shopify newsletter subscribe missing config', [
+                'store_domain_present' => (bool) $store,
+                'token_present' => (bool) $token,
+            ]);
 
-        $url = "{$endpoint}/v3/lists/{$listAddress}/members";
+            return back()
+                ->withErrors(['email' => 'Newsletter is not configured yet. Please try again later.'])
+                ->withInput();
+        }
+
+        $base = "https://{$store}/admin/api/{$version}";
 
         try {
-            $response = Http::asForm()
-                ->withBasicAuth('api', config('services.mailgun.secret'))
-                ->post($url, [
-                    'address'    => $email,
-                    'subscribed' => true,
-                    'upsert'     => true,
+            // 1) Search customer by email
+            $search = Http::withHeaders([
+                'X-Shopify-Access-Token' => $token,
+                'Accept' => 'application/json',
+            ])->get("{$base}/customers/search.json", [
+                'query' => "email:{$email}",
+                'limit' => 1,
+            ]);
+
+            if (!$search->successful()) {
+                Log::error('Shopify customer search failed', [
+                    'status' => $search->status(),
+                    'body'   => $search->body(),
                 ]);
 
-            if ($response->successful()) {
+                return back()
+                    ->withErrors(['email' => 'Subscription failed. Please try again in a moment.'])
+                    ->withInput();
+            }
+
+            $customers = $search->json('customers') ?? [];
+            $existing  = $customers[0] ?? null;
+
+            if ($existing) {
+                // 2a) Update existing customer to be subscribed
+                $customerId = $existing['id'];
+
+                // Merge tags safely
+                $existingTags = array_filter(array_map('trim', explode(',', (string)($existing['tags'] ?? ''))));
+                $tagSet = array_unique(array_merge($existingTags, ['newsletter']));
+                $tags = implode(', ', $tagSet);
+
+                $update = Http::withHeaders([
+                    'X-Shopify-Access-Token' => $token,
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json',
+                ])->put("{$base}/customers/{$customerId}.json", [
+                    'customer' => [
+                        'id' => $customerId,
+                        // Keep both for compatibility across Shopify changes:
+                        'accepts_marketing' => true,
+                        'email_marketing_consent' => [
+                            'state' => 'subscribed',
+                            'opt_in_level' => 'single_opt_in',
+                        ],
+                        'tags' => $tags,
+                    ],
+                ]);
+
+                if ($update->successful()) {
+                    return back()->with('success', 'You’re subscribed. Welcome!');
+                }
+
+                Log::error('Shopify customer update failed', [
+                    'status' => $update->status(),
+                    'body'   => $update->body(),
+                ]);
+
+                return back()
+                    ->withErrors(['email' => 'Subscription failed. Please try again in a moment.'])
+                    ->withInput();
+            }
+
+            // 2b) Create new customer as subscribed
+            $create = Http::withHeaders([
+                'X-Shopify-Access-Token' => $token,
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+            ])->post("{$base}/customers.json", [
+                'customer' => [
+                    'email' => $email,
+                    'accepts_marketing' => true,
+                    'email_marketing_consent' => [
+                        'state' => 'subscribed',
+                        'opt_in_level' => 'single_opt_in',
+                    ],
+                    'tags' => 'newsletter',
+                ],
+            ]);
+
+            if ($create->successful()) {
                 return back()->with('success', 'You’re subscribed. Welcome!');
             }
 
-            // Helpful errors from Mailgun often come back in JSON
-            Log::error('Mailgun list subscribe failed', [
-                'status' => $response->status(),
-                'body'   => $response->body(),
+            Log::error('Shopify customer create failed', [
+                'status' => $create->status(),
+                'body'   => $create->body(),
             ]);
 
             return back()
                 ->withErrors(['email' => 'Subscription failed. Please try again in a moment.'])
                 ->withInput();
         } catch (\Throwable $e) {
-            Log::error('Mailgun list subscribe exception', [
+            Log::error('Shopify newsletter subscribe exception', [
                 'error' => $e->getMessage(),
             ]);
 
