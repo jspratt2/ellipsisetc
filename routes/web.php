@@ -11,19 +11,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])
-    ->name('newsletter.subscribe');
+Route::post('/newsletter/subscribe', [
+    NewsletterController::class, 'subscribe'
+    ])->name('newsletter.subscribe'
+);
+
 Route::get('/newsletter', function () {
     return view('newsletter');
 });
-    Route::get('/mailgun-test', function () {
-        Mail::raw('Mailgun production test 🚀', function ($m) {
-            $m->to('2ttarpsj@gmail.com')
-                ->subject('Mailgun Production Test');
-        });
-
-        return 'Mail sent!';
-    });
 
 Route::get('/clients', function () {
     return view('comingsoon');
