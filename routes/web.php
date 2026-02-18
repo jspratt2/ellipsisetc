@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsletterController;
@@ -12,10 +13,17 @@ Route::get('/', function () {
 
 Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])
     ->name('newsletter.subscribe');
-
 Route::get('/newsletter', function () {
     return view('newsletter');
 });
+    Route::get('/mailgun-test', function () {
+        Mail::raw('Mailgun production test 🚀', function ($m) {
+            $m->to('2ttarpsj@gmail.com')
+                ->subject('Mailgun Production Test');
+        });
+
+        return 'Mail sent!';
+    });
 
 Route::get('/clients', function () {
     return view('comingsoon');
