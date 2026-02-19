@@ -7,7 +7,7 @@
 // Default reviews by category
 $defaultReviews = [
     'general' => [
-        ['text' => "It's not just prompts, it's a concise guide to how they work 👌🏻👌🏻👌🏻", 'author' => 'Customer Review', 'business' => 'Customer Business', 'stars' => 5],
+        ['text' => "It's not just prompts, it's a concise guide to how they work 👌🏻👌🏻👌🏻", 'author' => 'James Scott', 'business' => 'Retail & E-commerce', 'stars' => 5],
         ['text' => "Absolutely transformed my workflow. The attention to detail is incredible!", 'author' => 'Sarah M.', 'business' => 'Creative Studio', 'stars' => 5],
         ['text' => "Professional, responsive, and delivers beyond expectations every time.", 'author' => 'James T.', 'business' => 'Tech Startup', 'stars' => 5],
         ['text' => "Working with Ellipsis Etcetera was a game-changer for our brand identity.", 'author' => 'Michelle K.', 'business' => 'Marketing Agency', 'stars' => 5],
